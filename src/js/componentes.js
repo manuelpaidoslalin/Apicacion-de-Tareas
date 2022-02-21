@@ -1,6 +1,9 @@
+import { todoList } from "..";
+import { Todo } from "../classes/todo.class";
+
 // Referenciuas HTML
 const divTodoList=document.querySelector('.todo-list');
-
+const txtInput=document.querySelector('.new-todo');
 
 
 
@@ -23,3 +26,21 @@ divTodoList.append(div.firstElementChild);
 return div;
 
 }
+
+
+
+// Eventos
+txtInput.addEventListener('keyup',(event) =>{
+
+    if (event.keyCode===13 && txtInput.value!==''){
+
+        const nuevoTodo = new Todo(txtInput.value);
+        
+        todoList.nuevoTodo(nuevoTodo);
+        
+        crearTodoHtml(nuevoTodo);
+
+        console.log(txtInput.value);
+    }
+
+});
