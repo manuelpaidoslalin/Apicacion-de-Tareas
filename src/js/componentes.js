@@ -40,6 +40,8 @@ txtInput.addEventListener('keyup',(event) =>{
         
         crearTodoHtml(nuevoTodo);
 
+        txtInput.value='';
+
         console.log(txtInput.value);
     }
 
