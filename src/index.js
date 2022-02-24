@@ -6,12 +6,4 @@ import { crearTodoHtml } from './js/componentes';
 
 export const todoList=new TodoList();
 
-const tarea=new Todo('Aprender Javascript');
-
-todoList.nuevoTodo(tarea);
-
-console.log(todoList);
-
-tarea.completado=true;
-
-crearTodoHtml(tarea);
+todoList.todos.forEach(todo => crearTodoHtml(todo));
